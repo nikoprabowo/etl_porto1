@@ -1,0 +1,50 @@
+services:
+  mysql-db:
+    image: mysql:latest
+    container_name: mysql_etl_porto1
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: etl_porto1
+      MYSQL_USER: niko
+      MYSQL_PASSWORD: niko
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d
+    ports:
+      - 3307:3306
+    restart: always
+
+  metabase-app:
+    image: metabase/metabase
+    container_name: metabase_etl_porto1
+    environment:
+      MB_DB_TYPE: mysql
+      MB_DB_DBNAME: metabase_internal
+      MB_DB_PORT: 3306
+      MB_DB_USER: niko
+      MB_DB_PASS: niko
+      MB_DB_HOST: mysql-db
+    ports:
+      - 3001:3000
+    volumes:
+      - ./metabase-data:/metabase
+    restart: always
+    depends_on:
+      - mysql-db
+    links:
+      - mysql-db
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: pma_etl_porto1
+    environment:
+      PMA_HOST: mysql-db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    ports:
+      - 8185:80
+    restart: always
+    depends_on:
+      - mysql-db
+    links:
+      - mysql-db

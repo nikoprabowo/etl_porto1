@@ -1,0 +1,7 @@
+# Ignore sensitive files
+*.zip
+*.csv
+pentaho/data-integration/
+raw_data/
+metabase-data/
+mysql_data/
