@@ -1,5 +1,5 @@
 # ETL Project: McDonald's Store Reviews
-This ETL project aims to process McDonald's Store Reviews data from Kaggle and store it in a MySQL-based data warehouse. The data is then visualized using Metabase.
+This ETL project aims to process McDonald's Store Reviews data from Kaggle, transform it using Pentaho, and store it in a MySQL-based data warehouse. The data is then visualized using Metabase.
 
 ## Features
 1. **ETL Pipeline** using Pentaho Data Integration.
