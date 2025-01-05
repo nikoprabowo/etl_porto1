@@ -54,6 +54,10 @@ etl_porto1/
   python scripts/get_raw_data.py
   ```
 
+### VM and Remote SSH
+- I used Oracle VirtualBox for Virtual Machine and Ubuntu for OS, you can get my tutorial [How to Install Ubuntu Server on Oracle VirtualBox](https://www.datatensei.tech/2025/01/how-to-install-ubuntu-server-on-oracle.html).
+- I used OpenSSH remote to create this porto, you can get my tutorial [How to Set Up Remote SSH on Oracle VirtualBox as Server](https://www.datatensei.tech/2025/01/how-to-set-up-remote-ssh-on-oracle.html)
+
 ## Requirements
 1. **Oracle VirtualBox** (for the VM).
 2. **Ubuntu** (as the OS inside the VM).
